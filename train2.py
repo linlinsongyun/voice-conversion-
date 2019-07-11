@@ -28,7 +28,7 @@ def train(args, logdir2):
 
     # dataflow
     df = Net2DataFlow(hp.train2.mel_path, hp.train2.ppgs_path, hp.train2.batch_size)
-        session_inits = []
+    session_inits = []
     ckpt2 = '{}/{}'.format(logdir2, args.ckpt) if args.ckpt else tf.train.latest_checkpoint(logdir2)
     if ckpt2:
         session_inits.append(SaverRestore(ckpt2))
