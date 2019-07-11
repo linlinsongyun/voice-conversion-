@@ -1,0 +1,86 @@
+---
+default:
+    sr: 16000
+    # overlap length
+    n_fft: 512
+    n_ppgs: 355
+    hop_length: 160
+    #duration: 2
+    n_mels: 32
+    duration: 10
+    max_db: 35
+    min_db: -55
+
+    # model
+    hidden_units: 256  # alias: E
+    num_banks: 16
+    num_highway_blocks: 4
+    norm_type: 'ins'  # a normalizer function. value: bn, ln, ins, or None
+    t: 1.0  # temperature
+    dropout_rate: 0.2
+
+    # train
+    batch_size: 32
+
+#logdir_path: '/data/private/vc/logdir'
+logdir_path: 'logdir'
+---
+train2:
+    # path
+    #ppgs_path: '../../vc_feature/ts16k_ppgs353/*.npy'
+    #ppgs_path: '../../voice-conversion2/ppgs353_nolog/ts3k_ppgs353/*.npy'
+    #mel_path: '../../voice-conversion2/bfcc/ts_3k_bfcc' 
+    #ppgs_path: '../../vc_feature/ts16k_comb355_log-1k/*.npy'
+    ppgs_path: '../../vc_feature/ts353-noise-dflog/*.npy'
+    #mel_path: '../../voice-conversion2/bfcc/ts-noise-all/'
+    mel_path: '/home/zhangying09/.jupyter/corpus/bfcc-49/mel_20'
+    #ppgs_path: '../../vc_feature/ts_ppgs353_lf0_vuv/*.npy'
+    # phnone
+    #ppgs_path: '../ppg_201/bw_ppgs201/*.npy'
+    #mel_path: '../bw/bw_all_bfcc'
+    # model
+    hidden_units: 256  # alias: E
+    num_banks: 8
+    num_highway_blocks: 8
+    norm_type: 'ins'  # a normalizer function. value: bn, ln, ins, or None
+    t: 1.0  # temperature
+    dropout_rate: 0.2
+
+    # train
+    batch_size: 32
+    lr: 0.0003
+    lr_cyclic_margin: 0.
+    lr_cyclic_steps: 5000
+    clip_value_max: 3.
+    clip_value_min: -3.
+    clip_norm: 10
+    num_epochs: 500
+    steps_per_epoch: 300
+    save_per_epoch: 50
+    test_per_epoch: 1
+    num_gpu: 2
+---
+convert:
+    # path
+    #hecheng-test
+    #ppgs_path: '../../vc_feature/hecheng_com_infer'
+    #ppgs_path: '../../vc_feature/hecheng_16k_defln'
+    #mel_path: '../../voice-conversion2/bfcc/hecheng_test16k'
+    #ppgs_path: '../../vc_feature/ai16_355deflog'
+    #mel_path: '../..//voice-conversion2/bfcc/aishell'
+    #ppgs_path: '../../vc_feature/yy16_355deflog'
+    #mel_path: '../../voice-conversion2/bfcc/yy16/mel_20'
+    #test-jn
+    #ppgs_path: '/home/zhangying09/.jupyter/vc_feature/ts-ppgs/test-noise-jn'
+    #ppgs_path: '/home/zhangying09/.jupyter/corpus/bfcc-49/mel_20/test'
+    #mel_path: '/home/zhangying09/.jupyter/corpus/bfcc-49/mel_20/'
+    #save_path: 'test_0520/jn-test'
+    ppgs_path: '/home/zhangying09/.jupyter/vc_feature/ai16/ai16_355deflog'
+    mel_path: '/home/zhangying09/.jupyter/vc_feature/ai16/ai16-lpc32/mel_20'
+    #ppgs_path: '../../vc_feature/thu30-test/thu30-test16k-355deflog'
+    #mel_path: '../../vc_feature/thu30-test/thu30-test-lpc32/mel_20'
+    save_path: 'test_0521/ai16-lpc32-model154'
+    # convert  bdl_ppgs_convert
+    one_full_wav: False
+    batch_size: 1
+    emphasis_magnitude: 1.2
