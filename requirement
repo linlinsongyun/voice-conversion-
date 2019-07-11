@@ -1,0 +1,3 @@
+pip install pyyaml
+pip install librosa
+pip install matplotlib
