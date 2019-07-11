@@ -1,3 +1,5 @@
 pip install pyyaml
 pip install librosa
 pip install matplotlib
+#tfplot
+pip install tensorflow-plot
