@@ -1,5 +1,6 @@
 pip install python==2.7.12
-pip install tensorflow-gpu==1.8.0
+pip install tensorflow-gpu==1.8.0----对应的是cuda9.0
+tensorflow-gpu=1.14也可以跑，对应的是7.x版本
 pip install tensorpack==0.9.1
 pip install pyyaml==3.13
 pip install librosa=0.6.3
