@@ -1,5 +1,7 @@
-pip install pyyaml
-pip install librosa
+pip install tensorflow-gpu==1.8.0
+pip install tensorpack==0.9.1
+pip install pyyaml==3.13
+pip install librosa=0.6.3
 pip install matplotlib
 #tfplot
 pip install tensorflow-plot
