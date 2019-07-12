@@ -1,7 +1,8 @@
+pip install python==2.7.12
 pip install tensorflow-gpu==1.8.0
 pip install tensorpack==0.9.1
 pip install pyyaml==3.13
 pip install librosa=0.6.3
-pip install matplotlib
+pip install matplotlib=2.2.2
 #tfplot
 pip install tensorflow-plot
