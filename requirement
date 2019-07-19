@@ -1,6 +1,8 @@
+首先创建一个python2.7的虚拟环境
+conda install tensorflow-gpu=1.8.0
 pip install python==2.7.12
 pip install tensorflow-gpu==1.8.0----对应的是cuda9.0
-tensorflow-gpu=1.14也可以跑，对应的是7.x版本
+tensorflow-gpu=1.14也可以跑，对应的是7.x版本（不要用conda装，会报奇怪的问题）
 pip install tensorpack==0.9.1
 pip install pyyaml==3.13
 pip install librosa=0.6.3
